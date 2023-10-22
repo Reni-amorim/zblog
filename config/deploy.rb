@@ -111,11 +111,8 @@ namespace :deploy do
     end
   end
 
-  within release_path do
-    with rails_env: :production do
-      execute :rake, 'db:create'
-    end
-  end
+  after 'deploy:migrate', 'db:create'
+
 
   desc 'Restart application'
     task :restart do
