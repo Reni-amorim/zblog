@@ -111,7 +111,7 @@ namespace :deploy do
     end
   end
 
-
+ 
 
 
   desc 'Restart application'
@@ -121,8 +121,7 @@ namespace :deploy do
       end
   end
 
-  
-  after 'db:create'
+  after 'db:create', 'deploy:migrate' 
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
