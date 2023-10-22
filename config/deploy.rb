@@ -111,6 +111,12 @@ namespace :deploy do
     end
   end
 
+  within release_path do
+    with rails_env: :production do
+      execute :rake, 'db:create'
+    end
+  end
+
   desc 'Restart application'
     task :restart do
       on roles(:app), in: :sequence, wait: 5 do
