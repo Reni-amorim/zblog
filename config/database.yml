@@ -51,5 +51,5 @@ test:
 production:
   <<: *default
   database: zblog_production
-  username: zblog
+  username: deploy
   password: <%= ENV["ZBLOG_DATABASE_PASSWORD"] %>
