@@ -12,7 +12,7 @@ require "capistrano/deploy"
 # require "capistrano/scm/svn"
 
 require 'capistrano/rails'
-require 'capistrano/rails/db'
+gem 'capistrano-rails-db'
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
 
