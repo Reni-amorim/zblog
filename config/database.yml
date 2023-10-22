@@ -52,4 +52,4 @@ production:
   <<: *default
   database: zblog_production
   username: deploy
-  password: <%= ENV["ZBLOG_DATABASE_PASSWORD"] %>
+  password: reni1321
