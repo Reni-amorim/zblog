@@ -113,19 +113,7 @@ namespace :deploy do
     end
   end
 
-  namespace :deploy do
-    desc 'Generate Puma systemd service configuration'
-    task :generate_puma_systemd_config do
-      on roles(:app) do
-        within current_path do
-          execute :puma, :systemd, :config, 'TEMPLATE_PATH', 'OUTPUT_PATH'
-        end
-      end
-    end
-  end
   
-
-
   desc 'Restart application'
     task :restart do
       on roles(:app), in: :sequence, wait: 5 do
