@@ -26,7 +26,7 @@ require 'capistrano/puma'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
 install_plugin Capistrano::Puma::Nginx 
-install_plugin Capistrano::Puma::Daemon
+#install_plugin Capistrano::Puma::Daemon
 
 
 # Include tasks from other gems included in your Gemfile
