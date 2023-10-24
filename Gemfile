@@ -12,6 +12,7 @@ gem "rails", "~> 7.0.8"
 
 gem 'sshkit-sudo', '~> 0.1.0'
 
+gem "puma-plugin-systemd"
 
 #####
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]

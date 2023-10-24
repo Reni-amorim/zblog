@@ -41,3 +41,13 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
+
+
+# config/puma.rb
+
+bind "tcp://127.0.0.1:9292"
+
+workers 2
+threads 8, 16
+
+plugin :systemd
