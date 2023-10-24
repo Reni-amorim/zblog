@@ -103,18 +103,7 @@ namespace :deploy do
     end
   end
 
-  namespace :db do
-    desc 'Create the database'
-    task :create do
-      on roles(:db) do
-        within release_path do
-          with rails_env: fetch(:rails_env) do
-            execute :rake, 'db:create'
-          end
-        end
-      end
-    end
-  end
+  
   
   desc 'Initial Deploy'
   task :initial do
@@ -124,7 +113,16 @@ namespace :deploy do
     end
   end
 
-
+  namespace :deploy do
+    desc 'Generate Puma systemd service configuration'
+    task :generate_puma_systemd_config do
+      on roles(:app) do
+        within current_path do
+          execute :puma, :systemd, :config, 'TEMPLATE_PATH', 'OUTPUT_PATH'
+        end
+      end
+    end
+  end
   
 
 
