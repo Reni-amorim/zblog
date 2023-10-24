@@ -15,6 +15,7 @@ require 'capistrano/rails'
 gem 'capistrano-rails-db'
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
+requiere 'sshkit/sudo'
 
 
 # install_plugin Capistrano::SCM::Svn
