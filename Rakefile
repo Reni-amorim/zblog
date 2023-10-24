@@ -4,3 +4,11 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+
+namespace :db do
+    desc "Create the production database"
+    task create_production: :environment do
+      Rake::Task["db:create"].invoke
+    end
+  end
