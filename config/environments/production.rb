@@ -2,7 +2,6 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
 
-  server '15.229.43.153', user: 'deploy', roles: %w{app db web}
 
   # Settings specified here will take precedence over those in config/application.rb.
 
